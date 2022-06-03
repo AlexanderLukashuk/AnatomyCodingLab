@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/main(anatomy).css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <script defer src="static/js/organs_test.js"></script>
+    <title>Quiz App</title>
+</head>
+<body>
+<section id="title">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/"><i class="fa-solid fa-lungs"></i>your anatomy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul>
+                    <li><a href="sceleton.html">EN</a></li>
+                    <li><a href="sceleton_ru.html">RU</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="shop.html">About</a>
+
+
+                        <li><a class="nav-link" href="#">Anatomy</a>
+                            <ul>
+                                <li><a class="nav-link" href="muscular">Muscles</a>
+                                </li>
+                                <li><a class="nav-link" href="circulary">Blood vessels</a>
+                                </li>
+                                <li><a class="nav-link" href="skeleton">Skeleton</a>
+                                </li>
+                                <li><a class="nav-link" href="organs">Internal organs</a>
+                            </ul>
+                        </li>
+                        <li><a class="nav-link lng" id = "contact" href="#">Test</a>
+                            <ul>
+                                <li><a class="nav-link lng" href="index">Muscles</a>
+                                </li>
+                                <li><a class="nav-link lng" href="index_circulary">Blood vessels</a>
+                                </li>
+                                <li><a class="nav-link lng" href="index_skeleton">Skeleton</a>
+                                </li>
+                                <li><a class="nav-link lng" href="index_organs">Internal organs</a>
+                            </ul>
+                        </li>
+                        <a class="nav-link" href="#contacts">FAQ</a>
+                        <a class="nav-link" href="#"><i class="fa-solid fa-user-doctor"></i></a>
+                        <button  style="width:auto;">Sign Up</button>
+                        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<div class="container">
+    <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+</div>
+</body>
+</html>

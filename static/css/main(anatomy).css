@@ -27,7 +27,7 @@ body{
 	padding: 0.15% 0.5%;
 }
 .navbar {
-	padding-bottom: 4em;
+	/*padding-bottom: 4em;*/
 	
 }
 .navbar-brand {
@@ -66,9 +66,9 @@ body{
 	color: white;
 }
 
-/*body, html {*/
-/*	height: 100%;*/
-/*  }*/
+body, html {
+	height: 100%;
+  }
   
   .parallax {
 	/* The image used */

@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Suez+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link href="static/css/styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/css/main(anatomy).css">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/01ff51a4ff.js" crossorigin="anonymous"></script>
     <script defer src="static/js/organs_test.js"></script>
     <title>Quiz App</title>
 </head>
 <body>
-<section id="title">
+<section id="title-tests">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="/"><i class="fa-solid fa-lungs"></i>your anatomy</a>
@@ -66,19 +68,21 @@
         </nav>
     </div>
 </section>
-<div class="container">
-    <div id="question-container" class="hide">
-        <div id="question">Question</div>
-        <div id="answer-buttons" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
+<div class="test">
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
         </div>
-    </div>
-    <div class="controls">
-        <button id="start-btn" class="start-btn btn">Start</button>
-        <button id="next-btn" class="next-btn btn hide">Next</button>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
     </div>
 </div>
 </body>

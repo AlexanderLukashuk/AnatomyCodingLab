@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Role = require('../models/Role')
+const Question = require('../models/Question')
 const bcrypt = require('bcrypt')
 const {validationResult, body} = require('express-validator')
 const jwt = require('jsonwebtoken')
@@ -43,6 +44,45 @@ class authCtrl{
         }
     }
 
+    async createQuestion(req, res) {
+        try {
+            const errors = validationResult(req)
+            if(!errors.isEmpty()){
+                return res.status(400).json({message: "Some ERROR OCCURRED! Try again!"}, errors)
+            }
+
+            const question = req.body.question;
+            const answer1 = req.body.answer1;
+            const answer2 = req.body.answer2;
+            const answer3 = req.body.answer3;
+
+
+            const candidate = await Question.findOne({question})
+            if(candidate){
+                return res.status(400).json({message: "User with such name already exists!"})
+            }
+
+            // const hashedPassword = bcrypt.hashSync(password, 6);
+            // const userRole = await Role.findOne({value: 'USER'});
+            const test = new Question({question, answer1, answer2, answer3});
+            await test.save();
+            return res.json({message: "User has been successfully registered!"})
+
+        }  catch (e) {
+            console.log(e)
+            res.status(400).json({message: "Registration failed"})
+        }
+    }
+
+    async getTests(req, res) {
+        try {
+            const questions = await Question.find();
+            res.send(questions);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     async getUsers(req, res) {
         try {
             const users = await User.find();
@@ -51,6 +91,8 @@ class authCtrl{
             console.log(e)
         }
     }
+
+
 
     async update(req, res){
         try {

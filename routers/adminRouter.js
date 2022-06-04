@@ -9,6 +9,8 @@ const path = require("path");
 module.exports = router
     .get('/admin', (req,res) => res.render(path.resolve("pages/admin.ejs")))
     .get('/getUsers', controller.getUsers)
+    .get('/getTests', controller.getTests)
     .delete('/deleteUser', controller.delete)
     .patch('/updateUser', controller.update)
-    .post('/createUser', controller.registration);
+    .post('/createUser', controller.registration)
+    .post('/createTest', controller.createQuestion);

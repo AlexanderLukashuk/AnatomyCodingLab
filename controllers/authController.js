@@ -38,10 +38,10 @@ class authCtrl {
 
             const hashedPassword = bcrypt.hashSync(password, 6);
             const userRole = await Role.findOne({value: "USER"});
-            const user = new User({username, email, password: hashedPassword, roles: [userRole.value]});
+            const user = new User({username, email, password: hashedPassword});
             await user.save();
 
-            const token = generateAccessToken(user._id, user.roles);
+            const token = generateAccessToken(user._id);
 
             let authorizationToken = `Bearer ${token}`
             res.cookie('token', authorizationToken, {maxAge: 4 * 60 * 60 * 1000})

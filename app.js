@@ -52,6 +52,10 @@ try {
     app.use("/", require("./routers/workouts"))
 
     app.use("/", require("./routers/accessed/about"))
+    app.use("/", require("./routers/accessed/muscular"))
+    app.use("/", require("./routers/accessed/circulary"))
+    app.use("/", require("./routers/accessed/organs"))
+    app.use("/", require("./routers/accessed/skeleton"))
     app.use("/", require("./routers/accessed/index"))
     app.use("/", require("./routers/accessed/workpage"))
     app.use("/", require("./routers/accessed/workouts"))

@@ -1,5 +1,5 @@
 module.exports = {
     secret: "arigato",
     PORT: 3000,
-    uri: "mongodb+srv://maulerr:Aitu2021!@backend.koyk6.mongodb.net/backend?retryWrites=true&w=majority"
+    uri: "mongodb+srv://Sanya:Anatomy1337codlab@anotomy.sumsg.mongodb.net/?retryWrites=true&w=majority"
 }

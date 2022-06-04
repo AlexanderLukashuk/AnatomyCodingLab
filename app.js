@@ -32,7 +32,7 @@ require('./middleware/passport-jwt')(passport);
 //      /\
 
 try {
-    // mongoose.connect(uri);
+    mongoose.connect(uri);
 
     app.use("/", require("./routers/index"))
     app.use("/", require("./routers/muscular"))

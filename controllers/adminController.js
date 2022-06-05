@@ -92,6 +92,21 @@ class authCtrl{
         }
     }
 
+    async getQuestionById(req, res) {
+        try {
+            const questionData = req.body.questionData;
+            const title = 'Question';
+            // const question = await Question.findById(req.params.id);
+            const question = await Question.findOne(req.body.questionData);
+
+            console.log(question);
+            res.send(question);
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
+
 
 
     async update(req, res){

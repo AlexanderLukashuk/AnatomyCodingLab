@@ -10,6 +10,7 @@ module.exports = router
     .get('/admin', (req,res) => res.render(path.resolve("pages/admin.ejs")))
     .get('/getUsers', controller.getUsers)
     .get('/getTests', controller.getTests)
+    .get('/getQuestionById', controller.getQuestionById)
     .delete('/deleteUser', controller.delete)
     .patch('/updateUser', controller.update)
     .post('/createUser', controller.registration)

@@ -84,22 +84,29 @@
                 <button id="start-btn" class="start-btn btn">Start</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
             </form>
+            <div id="answer-buttons" class="btn-grid">
+<!--                <button class="btn">Answer 1</button>-->
+<!--                <button class="btn">Answer 2</button>-->
+<!--                <button class="btn">Answer 3</button>-->
+<!--                <button class="btn">Answer 4</button>-->
+                <% if (questions.length) { %>
+                    <% questions.forEach(({ question, answer1, answer2, answer3 }) => { %>
+                        <li>
+                            <article>
+                                <h2>
+                                    <%= question %>
+                                </h2>
+                                <p class="btn"><%= answer1 %></p>
+                                <p class="btn"><%= answer2 %></p>
+                                <p class="btn"><%= answer3 %></p>
+                            </article>
+                        </li>
+                    <% }) %>
+                <% } %>
+            </div>
 <!--            <button id="start-btn" class="start-btn btn">Start</button>-->
 <!--            <button id="next-btn" class="next-btn btn hide">Next</button>-->
-            <% if (questions.length) { %>
-                <% questions.forEach(({ question, answer1, answer2, answer3 }) => { %>
-                    <li>
-                        <article>
-                            <h2>
-                                <%= question %>
-                            </h2>
-                            <p><%= answer1 %></p>
-                            <p><%= answer2 %></p>
-                            <p><%= answer3 %></p>
-                        </article>
-                    </li>
-                <% }) %>
-            <% } %>
+
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-const {uri} = require("../../Xconfig");
+// const {uri} = require("../../Xconfig");
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
@@ -15,6 +15,17 @@ nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
+
+let questions = [];
+
+// async function getQuestions(req, res) {
+//   try {
+//     questions = await Question.find();
+//     // res.send(questions);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
 function startGame() {
   startButton.classList.add('hide')
@@ -80,32 +91,32 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
-const MongoClient = require("mongodb").MongoClient;
-
-// const url = "mongodb://localhost:27017/";
-const mongoClient = new MongoClient(uri);
-const questions = [];
-
-// Подключаемся к серверу
-mongoClient.connect(function(err, client){
-
-  // обращаемся к базе данных admin
-  const db = client.db("test.users");
-
-  // for (let i = 0; i < dbQuestions.length; i++) {
-    questions.push(db.);
-  // }
-
-  // db.command({ping: 1}, function(err, result){
-  //   if(!err){
-  //     console.log("Подключение с сервером успешно установлено");
-  //     console.log(result);
-  //   }
-  //   // Закрываем подключение
-  //   client.close();
-  //   console.log("Подключение закрыто");
-  // });
-});
+// const MongoClient = require("mongodb").MongoClient;
+//
+// // const url = "mongodb://localhost:27017/";
+// const mongoClient = new MongoClient(uri);
+// // const questions = [];
+//
+// // Подключаемся к серверу
+// mongoClient.connect(function(err, client){
+//
+//   // обращаемся к базе данных admin
+//   const db = client.db("test.users");
+//
+//   // for (let i = 0; i < dbQuestions.length; i++) {
+//   //   questions.push(db.);
+//   // }
+//
+//   // db.command({ping: 1}, function(err, result){
+//   //   if(!err){
+//   //     console.log("Подключение с сервером успешно установлено");
+//   //     console.log(result);
+//   //   }
+//   //   // Закрываем подключение
+//   //   client.close();
+//   //   console.log("Подключение закрыто");
+//   // });
+// });
 
 // const dbQuestions = [];
 //
@@ -126,7 +137,9 @@ mongoClient.connect(function(err, client){
 //   }
 // }
 
+function getQuestions() {
 
+}
 
 
 

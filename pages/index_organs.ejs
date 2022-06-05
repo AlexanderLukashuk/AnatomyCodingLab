@@ -80,8 +80,26 @@
             </div>
         </div>
         <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+            <form action="getTests" method="get">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </form>
+<!--            <button id="start-btn" class="start-btn btn">Start</button>-->
+<!--            <button id="next-btn" class="next-btn btn hide">Next</button>-->
+            <% if (questions.length) { %>
+                <% questions.forEach(({ question, answer1, answer2, answer3 }) => { %>
+                    <li>
+                        <article>
+                            <h2>
+                                <%= question %>
+                            </h2>
+                            <p><%= answer1 %></p>
+                            <p><%= answer2 %></p>
+                            <p><%= answer3 %></p>
+                        </article>
+                    </li>
+                <% }) %>
+            <% } %>
         </div>
     </div>
 </div>

@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser')
 const ejs = require('ejs')
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
+const Question = require('./models/Question')
+const path = require('path');
 
 // const session = require('express-session')
 // app.use(passport.session())
@@ -17,6 +19,19 @@ let port = process.env.PORT;
 if (port == null || port ===""){
     port = PORT;
 }
+
+const createPath = (page) => path.resolve(__dirname, 'pages', `${page}.ejs`);
+
+app.get('/index_organs', (req, res) => {
+    const title = 'Question';
+    Question
+        .find()
+        .then((questions) => res.render(createPath('index_organs'), { questions, title }))
+        .catch((error) => {
+            console.log(error);
+            res.render(createPath('error'), { title: 'Error' });
+        });
+});
 
 app.set("view engine", "ejs")
 app.use('/static', express.static('static'))

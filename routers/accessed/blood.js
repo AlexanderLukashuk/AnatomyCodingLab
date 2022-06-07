@@ -7,7 +7,7 @@ const {cookie} = require("express-validator");
 const {request} = require("express");
 
 router
-    .route("/circulary_accessed")
-    .get(accessMid, (req, res) => res.render(path.resolve("pages/accessed/circulary.ejs")))
-    .post(accessMid, (req, res) => res.render(path.resolve("pages/accessed/circulary.ejs")));
+    .route("/blood_accessed")
+    .get(accessMid, (req, res) => res.render(path.resolve("pages/accessed/blood.ejs")))
+    .post(accessMid, (req, res) => res.render(path.resolve("pages/accessed/blood.ejs")));
 module.exports = router;

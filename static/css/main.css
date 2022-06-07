@@ -133,3 +133,8 @@ ul {
         cursor: pointer;
     }
 }
+
+.btn-language {
+    background-color: transparent;
+    border: transparent;
+}

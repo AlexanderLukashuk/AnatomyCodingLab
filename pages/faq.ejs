@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html leng="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content=" ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your anatomy</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Suez+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Suez+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/muscular.css">
     <link rel="stylesheet" type="text/css" href="static/css/main(anatomy).css">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
-    <link href="static/css/styles.css" rel="stylesheet">
-    <script defer src="static/js/skeleton_test.js"></script>
-    <script src="js/jquery-2.2.3.min.js"></script>
     <script src="https://kit.fontawesome.com/01ff51a4ff.js" crossorigin="anonymous"></script>
-    <title>Quiz App</title>
+    <style>
+        li {
+            list-style-type: none;
+            display: inline;
+        }
+        ul {
+            margin-left: 0; /* Отступ слева в браузере IE и Opera */
+            padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        body {
+            background: url("./static/images/new_bg.jpg");
+            background-size: 100%;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .faaq {
+            margin-left: auto;
+            margin-right: auto;
+            width: 65em;
+        }
+
+
+    </style>
 </head>
 <body>
-<section id="title-tests">
+<section id="title">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="/"><i class="fa-solid fa-lungs"></i>your anatomy</a>
@@ -32,7 +78,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="shop.html">About</a>
+                        <a class="nav-link" href="shop">About</a>
 
 
                         <li><a class="nav-link" href="#">Anatomy</a>
@@ -41,14 +87,14 @@
                                 </li>
                                 <li><a class="nav-link" href="circulary">Blood vessels</a>
                                 </li>
-                                <li><a class="nav-link" href="skeleton">Skeleton</a>
+                                <li><a class="nav-link" href="sceleton">Skeleton</a>
                                 </li>
                                 <li><a class="nav-link" href="organs">Internal organs</a>
                             </ul>
                         </li>
                         <li><a class="nav-link lng" id = "contact" href="#">Test</a>
                             <ul>
-                                <li><a class="nav-link lng" href="index">Muscles</a>
+                                <li><a class="nav-link lng" href="index_muscular">Muscles</a>
                                 </li>
                                 <li><a class="nav-link lng" href="index_circulary">Blood vessels</a>
                                 </li>
@@ -58,32 +104,53 @@
                             </ul>
                         </li>
                         <a class="nav-link" href="faq">FAQ</a>
-                        <a class="nav-link" href="#"><i class="fa-solid fa-user-doctor"></i></a>
                         <button  style="width:auto;">Sign Up</button>
                         <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
                     </div>
                 </ul>
             </div>
         </nav>
     </div>
 </section>
-<div class="test">
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-        </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-        </div>
+
+<div class="faaq">
+    <h2 style="text-align: center">Frequently Asked Questions</h2>
+
+    <button class="accordion">How to register?</button>
+    <div class="panel">
+        <p> You can register and access basic information for free. There is interactivity with pictures, watch current videos on various topics and check your answers.</p>
     </div>
+
+    <button class="accordion">What is there?</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">How to pass the test?</button>
+    <div class="panel">
+        <p>- Go to the section with tests and choose the one you need. Pass the test and get the result, all information from the tests is located in the "Anatomy" section</p>
+    </div>
+
 </div>
+
+<script>
+    let acc = document.getElementsByClassName("accordion");
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            let panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+
 </body>
 </html>

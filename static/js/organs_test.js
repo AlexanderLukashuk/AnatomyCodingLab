@@ -8,7 +8,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
 
-AddQuestion();
+// AddQuestion();
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -137,51 +137,47 @@ function clearStatusClass(element) {
 //   }
 // }
 
-function getQuestions() {
-
-}
 
 
-
-// const questions = [
-//   {
-//     question: 'What does not apply to the internal organs of a person?',
-//     answers: [
-//       { text: 'aorta, the pulmonary venies, an arterioles', correct: true },
-//       { text: 'pancreas, intestines, colon, rectum, spleen, kidneys, and appendicitis.', correct: false },
-//       { text: 'trachea, esophagus, lungs, heart, stomach, liver, gallbladder', correct: false }
-//     ]
-//   },
-//   {
-//     question: 'How many hemispheres does the brain consist of?',
-//     answers: [
-//       { text: '2', correct: true },
-//       { text: '1', correct: false },
-//       { text: '4', correct: false }
-//     ]
-//   },
-//   {
-//     question: 'How is the brain attached to the skull?',
-//     answers: [
-//       { text: 'nothing', correct: false },
-//       { text: 'nerves and blood vessels', correct: true },
-//       { text: 'a special mixture that is produced by the brain', correct: false }
-//     ]
-//   },
-//   {
-//     question: 'What is the largest organ in the human body?',
-//     answers: [
-//       { text: 'lungs', correct: false },
-//       { text: 'liver', correct: true },
-//       { text: 'brain', correct: false }
-//     ]
-//   },
-//   {
-//     question: question.question.text,
-//     answers: [
-//       { text: question.answer1.text, correct: true },
-//       { text: question.answer2.text, correct: false },
-//       { text: question.answer3.text, correct: false }
-//     ]
-//   }
-// ]
+const questions = [
+  {
+    question: document.getElementById('question'),
+    answers: [
+      { text: document.getElementById('label_radio_1'), correct: true },
+      { text: document.getElementById('label_radio_2'), correct: false },
+      { text: document.getElementById('label_radio_3'), correct: false }
+    ]
+  },
+  // {
+  //   question: 'What does not apply to the internal organs of a person?',
+  //   answers: [
+  //     { text: 'aorta, the pulmonary venies, an arterioles', correct: true },
+  //     { text: 'pancreas, intestines, colon, rectum, spleen, kidneys, and appendicitis.', correct: false },
+  //     { text: 'trachea, esophagus, lungs, heart, stomach, liver, gallbladder', correct: false }
+  //   ]
+  // },
+  // {
+  //   question: 'How many hemispheres does the brain consist of?',
+  //   answers: [
+  //     { text: '2', correct: true },
+  //     { text: '1', correct: false },
+  //     { text: '4', correct: false }
+  //   ]
+  // },
+  // {
+  //   question: 'How is the brain attached to the skull?',
+  //   answers: [
+  //     { text: 'nothing', correct: false },
+  //     { text: 'nerves and blood vessels', correct: true },
+  //     { text: 'a special mixture that is produced by the brain', correct: false }
+  //   ]
+  // },
+  // {
+  //   question: 'What is the largest organ in the human body?',
+  //   answers: [
+  //     { text: 'lungs', correct: false },
+  //     { text: 'liver', correct: true },
+  //     { text: 'brain', correct: false }
+  //   ]
+  // }
+]

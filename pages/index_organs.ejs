@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="static/css/main(anatomy).css">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
+<!--    <link rel="stylesheet" type="text/css" href="static/css/testsCheching.css">-->
     <link href="static/css/styles.css" rel="stylesheet">
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="https://kit.fontawesome.com/01ff51a4ff.js" crossorigin="anonymous"></script>
@@ -80,7 +81,7 @@
             </div>
         </div>
         <div class="controls">
-            <form action="getTests" method="get">
+            <form>
                 <button id="start-btn" class="start-btn btn">Start</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
             </form>
@@ -89,16 +90,38 @@
 <!--                <button class="btn">Answer 2</button>-->
 <!--                <button class="btn">Answer 3</button>-->
 <!--                <button class="btn">Answer 4</button>-->
+                <% const jsdom = require("jsdom"); %>
+                <% const { JSDOM } = jsdom; %>
+                <% global.document = new JSDOM(html).window.document; %>
+                <% var count = 1; %>
                 <% if (questions.length) { %>
                     <% questions.forEach(({ question, answer1, answer2, answer3 }) => { %>
                         <li>
                             <article>
-                                <h2>
+                                <h2 id="question">
                                     <%= question %>
                                 </h2>
-                                <p class="btn"><%= answer1 %></p>
-                                <p class="btn"><%= answer2 %></p>
-                                <p class="btn"><%= answer3 %></p>
+                                <div class="radio">
+                                    <input class="radio__input" name="0" type="radio" id="radio_1">
+                                    <label class="radio__label" for="radio_1" id="label_radio_1"><%= answer1 %></label>
+                                </div>
+                                <div class="radio">
+                                    <input class="radio__input" name="0" type="radio" id="radio_2">
+                                    <label class="radio__label" for="radio_2" id="label_radio_2"><%= answer2 %></label>
+                                </div>
+                                <div class="radio">
+                                    <input class="radio__input" name="0" type="radio" id="radio_3">
+                                    <label class="radio__label" for="radio_3" id="label_radio_3"><%= answer3 %></label>
+                                </div>
+                                <% for(var i = 0; i < 3; i++) { %>
+                                    <% var elem = global.document.getElementById('radio_' + (i + 1)) %>
+                                    <% if (elem != null) { %>
+                                        <% elem.name = count; %>
+                                    <% } %>
+                                <% } %>
+                                <% count++; %>
+<!--                                <p><button type="submit">Готово</button> <button type="reset">Сбросить ответы</button></p>-->
+<!--                                <p><textarea id="output" readonly></textarea></p>-->
                             </article>
                         </li>
                     <% }) %>
@@ -110,5 +133,34 @@
         </div>
     </div>
 </div>
+
+<script>
+    // правильные ответы - первый и третий
+    let answer = {1:true, 3:true};
+    function checkAnswer() {
+        // считаем что ответы правильные
+        let error = false;
+        // чекбоксы
+        let inputs = document.getElementsByTagName('input');
+        for (let i = 0; i < inputs.length; i++) {
+            // галка
+            let checked = inputs[i].checked;
+            // является ли вариант правильным
+            let right = answer[i+1] == true;
+            // если отметка не является правильной
+            if (checked !== right) {
+                error = true;
+                // дальше можно не проверять
+                break;
+            }
+        }
+        let output = document.getElementById('output');
+        output.value = error ? 'Ошибка!!!' : 'Зачот!!!';
+        // предотвращаем отправку формы
+        return false;
+    }
+</script>
+
+
 </body>
 </html>

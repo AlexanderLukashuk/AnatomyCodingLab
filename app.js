@@ -50,6 +50,10 @@ try {
     mongoose.connect(uri);
 
     app.use("/", require("./routers/index"))
+    app.use("/", require("./routers/indexRu"))
+    app.use("/", require("./routers/muscularRu"))
+    app.use("/", require("./routers/organsRu"))
+    app.use("/", require("./routers/skeletonRu"))
     app.use("/", require("./routers/muscular"))
     app.use("/", require("./routers/choice"))
     app.use("/", require("./routers/organs"))
